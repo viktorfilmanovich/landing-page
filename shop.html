@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Супермаркет кондиционеров</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/shop.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <div class="lds-dual-ring"></div>
+    </div>
+    <div class="page">
+      <header class="">
+        <div class="header__top">
+          <div class="container">
+            <div class="header__top-group">
+              <div class="hamb">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+              <div class="location">
+                <svg class="location-image">
+                  <use xlink:href="sprite.svg#location"></use>
+                </svg>
+                <p class="location-text">Сочи</p>
+              </div>
+              <div class="menu">
+                <ul class="nav">
+                  <li><a href="#cond-scroll">Заказать доставку</a></li>
+                  <li><a href="#uslugi-scroll">Заказать установку</a></li>
+                  <li><a href="#o-nas-scroll">О нас</a></li>
+                </ul>
+              </div>
+              <div class="header-info">
+                <a href="tel:+79881482838">8 (988) 148-28-38</a>
+                <button class="open-popup" type="button">Перезвоните мне</button>
+              </div>
+              <div class="header-info-mobile">
+                <a href="tel:+79881482838">
+                  <img src="./img/icons/phone.svg" alt="phone" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="container">
+            <div class="header__bottom-buttons">
+              <div class="logo">
+                <div class="logo-texts">
+                  <div class="logo-text">Кондиционеры</div>
+                  <div class="logo-text2">кондиционеры каждому</div>
+                </div>
+              </div>
+              <div class="header__search-group">
+                <input class="header__input-search" type="search" placeholder="Поиск по сайту" />
+                <span class="header__search-cansel">
+                  <div class="header__search-cansel-bar"></div>
+                  <div class="header__search-cansel-bar"></div>
+                </span>
+                <button class="header__search-btn">
+                  <svg class="header__search-image">
+                    <use xlink:href="sprite.svg#search"></use>
+                  </svg>
+                </button>
+                <ul class="header__search-variants none"></ul>
+              </div>
+              <div class="header__right-buttons">
+                <button class="header__favourites-button">
+                  <div class="header__button-group">
+                    <svg class="header__favourites-image">
+                      <use xlink:href="sprite.svg#favourites"></use>
+                    </svg>
+                    <div class="header__favourites-image-counter">
+                      <span class="header__favourites-image-counter-text"></span>
+                    </div>
+                    <div class="header__favourites-button__text">Избранное</div>
+                  </div>
+                </button>
+                <button class="header__cart-button">
+                  <div class="header__button-group">
+                    <svg class="header__cart-image">
+                      <use xlink:href="sprite.svg#cart-icon"></use>
+                    </svg>
+                    <div class="header__cart-button-text">Корзина</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="main">
+        <div class="container">
+          <div class="promo">
+            <div class="promo__left">
+              <p class="promo__left-title">
+                Нужна помощь при выборе оборудования или не нашли нужный товар?
+              </p>
+              <p class="promo__left-title">
+                Оставьте свои контактные данные, мы свяжемся с Вами и проконсультируем.
+              </p>
+              <div class="promo__left-form">
+                <input
+                  type="text"
+                  class="promo__left-input"
+                  id="tel"
+                  placeholder="+7 (___) ___ __ __"
+                />
+                <button class="promo__left-btn">Связаться</button>
+              </div>
+            </div>
+            <div class="carousel">
+              <div class="carousel__item carousel__item--visible">
+                <img class="carousel__item-img" src="img/shop-banners/1.jpg" />
+              </div>
+              <div class="carousel__item">
+                <img class="carousel__item-img" src="img/shop-banners/2.jpg" />
+              </div>
+              <div class="carousel__item">
+                <img class="carousel__item-img" src="img/shop-banners/3.jpg" />
+              </div>
+              <div class="carousel__actions">
+                <button class="carousel__button--prev" aria-label="Previous slide">
+                  <div class="carousel__button-bar"></div>
+                  <div class="carousel__button-bar"></div>
+                </button>
+                <button class="carousel__button--next" aria-label="Next slide">
+                  <div class="carousel__button-bar"></div>
+                  <div class="carousel__button-bar"></div>
+                </button>
+              </div>
+              <div class="carousel__pagination">
+                <button class="carousel__button-pagination">
+                  <span class="carousel__button-span carousel__button-span--active"></span>
+                </button>
+                <button class="carousel__button-pagination">
+                  <span class="carousel__button-span"></span>
+                </button>
+                <button class="carousel__button-pagination">
+                  <span class="carousel__button-span"></span>
+                </button>
+              </div>
+            </div>
+            <div class="promo__right">
+              <div class="promo__right-top">
+                <div class="promo__right-text">Товар дня:</div>
+                <div class="promo__right-timer">
+                  <div class="promo__right-wrapper">
+                    <div class="promo-time promo__right-hour"></div>
+                  </div>
+                  <div class="promo__right-separate">:</div>
+                  <div class="promo__right-wrapper">
+                    <div class="promo-time promo__right-minute"></div>
+                  </div>
+                  <div class="promo__right-separate">:</div>
+                  <div class="promo__right-wrapper">
+                    <div class="promo-time promo__right-second"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="promo__right-center">
+                <div class="promo__right-center-left-group">
+                  <div class="promo__right-center-discount">Скидка -21%</div>
+                  <img src="/img/roll/black-crab.jpg" alt="split" class="promo__right-center-img" />
+                </div>
+                <div class="promo__right-center-text-group">
+                  <div class="promo__right-center-price">
+                    <span class="promo__right-center-price-normal"> 19 000 ₽ </span>
+                    <span class="promo__right-center-price-through"> 24 200 ₽ </span>
+                  </div>
+                  <div class="promo__right-center-text">Сплит-система Rovex RS-07TSE1</div>
+                </div>
+              </div>
+              <div class="promo__right-bottom">
+                <button class="promo__right-bottom-button">В корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="page__title">
+            Кондиционеры (сплит-системы)<span class="page__products-quantity"></span>
+          </div>
+
+          <!-- Товары -->
+          <div class="col-md-8 vitrina">
+            <aside class="sidebar">
+              <div class="sidebar__header">
+                <div class="sidebar__header-text">Фильтры</div>
+                <button class="sidebar__button-close">
+                  <span class="sidebar__button-close-bar"></span>
+                  <span class="sidebar__button-close-bar"></span>
+                </button>
+              </div>
+
+              <div id="filters">
+                <div class="sidebar__item" id="filters__click-render">
+                  <div class="sidebar__item-title">
+                    <button class="sidebar__title-btn">
+                      <span class="sidebar__title-btn-bar"></span>
+                      <span class="sidebar__title-btn-bar"></span>
+                    </button>
+                    <h3 class="sidebar__title-category">Тип кондиционера</h3>
+                  </div>
+                  <div class="sidebar__item-menu" id="type">
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="standart"
+                        />Стандартные
+                        <span class="sidebar__category-quantity" data-type="standart"></span>
+                      </label>
+                    </div>
+
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="invertor"
+                        />Инверторные
+                        <span class="sidebar__category-quantity" data-type="invertor"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar__item" id="filters__price-render">
+                  <div class="sidebar__item-title">
+                    <button class="sidebar__title-btn">
+                      <span class="sidebar__title-btn-bar"></span>
+                      <span class="sidebar__title-btn-bar"></span>
+                    </button>
+                    <h3 class="sidebar__title-category">Цена</h3>
+                  </div>
+                  <div class="sidebar__item-menu padding">
+                    <div class="price-group">
+                      <div class="price-input">
+                        <span class="price-input__text"> от </span>
+                        <input
+                          class="input-text"
+                          type="text"
+                          min="14000"
+                          max="300000"
+                          id="price-min"
+                          placeholder="14 000"
+                        />
+                        <span class="price-reset none" id="price-min-reset"> </span>
+                      </div>
+                      <span class="price-input__span">-</span>
+                      <div class="price-input">
+                        <span class="price-input__text"> до </span>
+                        <input
+                          class="input-text"
+                          type="text"
+                          min="14000"
+                          max="300000"
+                          id="price-max"
+                          placeholder="300 000"
+                        />
+                        <span class="price-reset none" id="price-max-reset"> </span>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="multi-range">
+                      <input
+                        id="min"
+                        type="range"
+                        min="14000"
+                        max="300000"
+                        value="14000"
+                        step="1"
+                      /><input
+                        id="max"
+                        type="range"
+                        min="14000"
+                        max="300000"
+                        value="300000"
+                        step="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar__item" id="filters__click-render">
+                  <div class="sidebar__item-title">
+                    <button class="sidebar__title-btn">
+                      <span class="sidebar__title-btn-bar"></span>
+                      <span class="sidebar__title-btn-bar"></span>
+                    </button>
+                    <h3 class="sidebar__title-category">Площадь помещения</h3>
+                  </div>
+                  <div class="sidebar__item-menu" id="rangeArea">
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="15м²-20м²"
+                        />15 м² - 20 м²
+                        <span class="sidebar__category-quantity" data-rangearea="15м²-20м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="25м²-30м²"
+                        />25 м² - 30 м²
+                        <span class="sidebar__category-quantity" data-rangearea="25м²-30м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="30м²-40м²"
+                        />30 м² - 40 м²
+                        <span class="sidebar__category-quantity" data-rangearea="30м²-40м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="40м²-50м²"
+                        />40 м² - 50 м²
+                        <span class="sidebar__category-quantity" data-rangearea="40м²-50м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="60м²-70м²"
+                        />60 м² - 70 м²
+                        <span class="sidebar__category-quantity" data-rangearea="60м²-70м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="70м²-80м²"
+                        />70 м² - 80 м²
+                        <span class="sidebar__category-quantity" data-rangearea="70м²-80м²"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="100м²"
+                        />100 м²
+                        <span class="sidebar__category-quantity" data-rangearea="100м²"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar__item" id="filters__click-render">
+                  <div class="sidebar__item-title">
+                    <button class="sidebar__title-btn">
+                      <span class="sidebar__title-btn-bar"></span>
+                      <span class="sidebar__title-btn-bar"></span>
+                    </button>
+                    <h3 class="sidebar__title-category">Бренд</h3>
+                  </div>
+                  <div class="sidebar__item-menu" id="brand">
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="rovex"
+                        />Rovex
+                        <span class="sidebar__category-quantity" data-brand="rovex"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input type="checkbox" class="sidebar__category-checkbox" value="jax" />JAX
+                        <span class="sidebar__category-quantity" data-brand="jax"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="BALLU"
+                        />Ballu
+                        <span class="sidebar__category-quantity" data-brand="ballu"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="Electrolux"
+                        />Electrolux
+                        <span class="sidebar__category-quantity" data-brand="electrolux"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="Zanussi"
+                        />Zanussi
+                        <span class="sidebar__category-quantity" data-brand="zanussi"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="TOSHIBA"
+                        />Toshiba
+                        <span class="sidebar__category-quantity" data-brand="toshiba"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="SHUFT"
+                        />Shuft
+                        <span class="sidebar__category-quantity" data-brand="shuft"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="denko"
+                        />Denko
+                        <span class="sidebar__category-quantity" data-brand="denko"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="centek"
+                        />Centek
+                        <span class="sidebar__category-quantity" data-brand="centek"></span>
+                      </label>
+                    </div>
+                    <div class="sidebar__category">
+                      <label class="sidebar__category-label"
+                        ><input
+                          type="checkbox"
+                          class="sidebar__category-checkbox"
+                          value="lessar"
+                        />Lessar
+                        <span class="sidebar__category-quantity" data-brand="lessar"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar__item" id="filters__click-render">
+                  <div class="sidebar__item-title">
+                    <button class="sidebar__title-btn">
+                      <span class="sidebar__title-btn-bar"></span>
+                      <span class="sidebar__title-btn-bar"></span>
+                    </button>
+                    <h3 class="sidebar__title-category">Страна-производитель</h3>
+                  </div>
+                  <div class="sidebar__item-menu" id="country">
+                    <label class="country-child">
+                      <input
+                        class="country-child__input"
+                        type="radio"
+                        name="countries"
+                        value=""
+                        checked
+                      />
+                      <!-- </input> -->
+                      <span class="design"></span>
+                      <p>Все страны</p>
+                    </label>
+                    <label class="country-child">
+                      <input
+                        class="country-child__input"
+                        type="radio"
+                        name="countries"
+                        value="turkey"
+                      />
+                      <!-- </input> -->
+                      <span class="design"></span>
+                      <p>Турция</p>
+                    </label>
+                    <label class="country-child">
+                      <input
+                        class="country-child__input"
+                        type="radio"
+                        name="countries"
+                        value="china"
+                      />
+                      <!-- </input> -->
+                      <span class="design"></span>
+                      <p>Китай</p>
+                    </label>
+                    <label class="country-child">
+                      <input
+                        class="country-child__input"
+                        type="radio"
+                        name="countries"
+                        value="france"
+                      />
+                      <!-- </input> -->
+                      <span class="design"></span>
+                      <p>Франция</p>
+                    </label>
+                    <label class="country-child">
+                      <input
+                        class="country-child__input"
+                        type="radio"
+                        name="countries"
+                        value="italy"
+                      />
+                      <!-- </input> -->
+                      <span class="design"></span>
+                      <p>Италия</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar__bottom">
+                <button class="sidebar__button-apply">
+                  Показать <span class="sidebar__button-apply-span"></span>
+                </button>
+              </div>
+            </aside>
+            <div class="right-bar">
+              <div class="category-head">
+                <div class="category-sort__group">
+                  <span class="category-sort__text">Сортировка:</span>
+                  <div class="select-group">
+                    <div class="select-parent" id="select">
+                      <div class="select-child-main"></div>
+                      <button class="select__item-btn">
+                        <span class="select__item-btn-bar"></span>
+                        <span class="select__item-btn-bar"></span>
+                      </button>
+                    </div>
+                    <div class="select-parent-menu">
+                      <div value="" class="select-child">По умолчанию</div>
+                      <div value="Default" class="select-child">Сначала популярные</div>
+                      <div value="LowToHigh" class="select-child">Сначала недорогие</div>
+                      <div value="HighToLow" class="select-child">Сначала дорогие</div>
+                    </div>
+                  </div>
+                  <!-- // sort -->
+                </div>
+                <div class="category__filter">
+                  <img class="category__filter-icon" src="./img/icons/filter.svg" alt="filter" />
+                  <div class="category__filter-text">Фильтры</div>
+                </div>
+                <div class="category__view-buttons">
+                  <button data-view="grid" class="category__button-grid">
+                    <div class="category__button-item-grid"></div>
+                    <div class="category__button-item-grid"></div>
+                    <div class="category__button-item-grid"></div>
+                    <div class="category__button-item-grid"></div>
+                  </button>
+                  <button data-view="list" class="category__button-list">
+                    <div class="category__button-item-list"></div>
+                    <div class="category__button-item-list"></div>
+                  </button>
+                </div>
+              </div>
+              <div class="row sort__list" id="products-container"></div>
+              <button class="more-products-btn">Показать ещё</button>
+            </div>
+          </div>
+          <!-- // Товары -->
+        </div>
+      </div>
+
+      <footer>
+        <div class="bg-black">
+          <div class="wrapper-footer">
+            <div class="footer-top">
+              <div class="logo">
+                <div class="footer__logo-texts">
+                  <div class="logo-text-footer">Condi-K</div>
+                  <div class="logo-text2-footer">кондиционеры каждому</div>
+                </div>
+              </div>
+              <div class="footer-top-item">
+                <ul class="social">
+                  <li class="social-item">
+                    <a class="social-link social-tg" href="" target="_blank"></a>
+                  </li>
+                  <li class="social-item">
+                    <a class="social-link social-wa" href="" target="_blank"></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-info">
+                <span>Сочи, Адлер, Красная поляна</span>
+                <span><a href="tel:+79881482838">8 (988) 148-28-38</a></span>
+                <button class="open-popup info-button" type="button">Обратный звонок</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-footer">
+          <div class="footer-bottom">
+            <p>Condi-K кондиционеры каждому (с) 2022 Все права защищены.</p>
+            <a href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Карточка товара popup -->
+      <div class="modal"></div>
+      <div class="modal__content">
+        <button class="modal__back">
+          <span class="modal__back-bar"></span>
+          <span class="modal__back-bar"></span>
+        </button>
+        <button class="modal__close">
+          <span class="modal__close-bar"></span>
+          <span class="modal__close-bar"></span>
+        </button>
+        <div class="modal__left"></div>
+        <div class="modal__right"></div>
+      </div>
+      <!-- // Карточка товара popup -->
+
+      <div class="background"></div>
+
+      <!-- Избранное -->
+      <div class="favourites-bg"></div>
+      <div class="favourites">
+        <div class="favourites__top">
+          <button class="favourites__button-close">
+            <span class="favourites__button-close-bar"></span>
+            <span class="favourites__button-close-bar"></span>
+          </button>
+        </div>
+        <div class="favourites__title">Избранное</div>
+        <div class="favourites__content">
+          <div class="favourites__products"></div>
+          <div class="favourites__empty">
+            <img
+              class="favourites__empty-img"
+              src="/img/icons/favourites-none.svg"
+              alt="favourites-none"
+            />
+            <div data-favourites-empty class="favourites__empty-text">
+              В списке избранного пока нет товаров
+            </div>
+          </div>
+          <button class="favourites__button-catalog">Перейти в каталог</button>
+        </div>
+        <div class="favourites__bottom"></div>
+      </div>
+      <!-- // Избранное -->
+
+      <!-- Корзина -->
+      <div class="korzina">
+        <button class="korzina__button-close">
+          <span class="korzina__button-close-bar"></span>
+          <span class="korzina__button-close-bar"></span>
+        </button>
+        <!-- Корзина -->
+        <div class="cart-main">
+          <h5 class="cart-title">Корзина товаров</h5>
+          <div class="card-body cart-card-body">
+            <div data-cart-empty class="alert alert-secondary" role="alert">
+              Ваша корзина пуста :(
+            </div>
+            <!-- cart-wrapper -->
+            <div class="cart-wrapper"></div>
+            <!-- // cart-wrapper -->
+            <div class="cart-bottom">
+              <!-- Стоимость заказа -->
+              <div class="cart-total">
+                <div class="cart-total__group">
+                  <p data-cart-delivery class="cart-total__delivery">
+                    <span class="h5">Доставка:</span>
+                    <span class="delivery-cost">250 ₽</span><br />
+                    <span class="small">Бесплатно при заказе от 10 000 ₽</span>
+                  </p>
+                  <button class="cart-button-clear">Очистить корзину</button>
+                </div>
+                <div class="cart-total__bottom-group">
+                  <span class="h5">Итого к оплате</span>
+                  <div class="cart-total__price">
+                    <span class="total-price">0</span>
+                    <span class="rouble">₽</span>
+                  </div>
+                </div>
+              </div>
+              <!-- // Стоимость заказа -->
+            </div>
+          </div>
+          <!-- Подтведить заказ -->
+          <button data-predv-cart="" type="button" class="btn btn-predv">Перейти к покупкам</button>
+          <!-- // Подтведить заказ -->
+        </div>
+        <!-- // Корзина -->
+      </div>
+      <!-- // Корзина -->
+
+      <!-- Оформить заказ -->
+      <div id="order-form" class="card-body border-top">
+        <button class="order__button-close">
+          <span class="order__button-close-bar"></span>
+          <span class="order__button-close-bar"></span>
+        </button>
+        <div class="order__alert-text-number">Телефон должен содержать 11 цифр</div>
+        <div class="order__alert-text-address">Заполните адрес доставки</div>
+        <div class="order__alert-text-checkbox">Согласитесь с политикой конфиденциальности</div>
+        <h5 class="cart-title cart-title--form">Оформление заказа</h5>
+        <!-- ФОРМА -->
+        <form action="#" class="order-modal__form order">
+          <input type="hidden" name="form_subject" value="Покупка кондиционера" />
+          <label class="order__label flex-between-end">
+            <input
+              type="tel"
+              name="Телефон"
+              class="order__input form-control"
+              placeholder="+7 (___)___-__-__"
+              id="tel"
+            />
+          </label>
+          <label class="order__label flex-between-end">
+            <input
+              type="text"
+              name="Адрес"
+              class="order__input form-control"
+              placeholder="Введите адрес доставки"
+              id="address"
+            />
+          </label>
+          <button class="order__btn btn-primary btn">Заказать</button>
+          <div class="order__personal-group">
+            <div class="order__item-check">
+              <input type="checkbox" checked class="order__checkbox" />
+            </div>
+            <div class="order__personal-text">
+              Я согласен с <span class="order__privacy-policy">политикой конфиденциальности</span>,
+              <span class="order__user-agreement">пользовательским соглашением</span> и даю
+              разрешение на обработку персональных данных.
+            </div>
+          </div>
+        </form>
+        <!-- ФОРМА -->
+        <h5 class="cart-title-bottom">
+          Или позвоните нам сами<br /><span class="cart-title-bottom__phone"
+            >8 (988) 148-28-38</span
+          >
+        </h5>
+      </div>
+      <!-- // Оформить заказ -->
+
+      <!-- Окно благодарности -->
+      <div class="thanks">
+        Спасибо. Мы уже получили ваш заказ и скоро перезвоним вам.
+        <button class="thanks__button-close">
+          <span class="thanks__button-close-bar"></span>
+          <span class="thanks__button-close-bar"></span>
+        </button>
+      </div>
+      <!-- // Окно благодарности -->
+    </div>
+
+    <script src="./js/root.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/renderProducts.js"></script>
+    <script src="./js/paginationButton.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/priceRangeSlider.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/timer.js"></script>
+    <script src="./js/sortPrice.js"></script>
+    <script src="./js/productsView.js"></script>
+    <script src="./js/openDetailsProduct.js"></script>
+    <script src="./js/clearCartButton.js"></script>
+    <script src="./js/calcCartPrice.js"></script>
+    <script src="./js/toggleFavouritesStatus.js"></script>
+    <script src="./js/toggleCartStatus.js"></script>
+    <script src="./js/counter.js"></script>
+    <script src="./js/formBlock.js"></script>
+    <script src="./js/thanks.js"></script>
+    <script src="./js/openAndCloseCart.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/favourites.js"></script>
+    <script src="./js/syncFavouritesProducts.js"></script>
+    <script src="./js/modalProduct.js"></script>
+    <script src="./js/sendForm.js"></script>
+    <script src="./js/toggleMobileMenu.js"></script>
+    <script src="./js/maskphone.js"></script>
+
+    <!-- <script type="module" src="./js/main.js"></script> -->
+  </body>
+</html>
