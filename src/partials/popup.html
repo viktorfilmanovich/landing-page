@@ -1,0 +1,80 @@
+<div class="popup-background"></div>
+<div class="popup">
+  <div class="popup__close-button">
+    <div class="popup__close-button-bar"></div>
+    <div class="popup__close-button-bar"></div>
+  </div>
+  <p class="popup__title">
+    Введите ваши данные, <br />и нажмите «<span>Отправить</span>»
+  </p>
+  <form method="POST" class="contact-form contact-form--popup">
+    <label for="popupName" class="popup__label"> Имя</label>
+    <input
+      id="popupName"
+      name="popupName"
+      type="text"
+      class="contact-form__input contact-form__input--name"
+    />
+    <div class="notification notification--name-popup">
+      <p>
+        Заполните
+        <b> имя</b>.
+      </p>
+      <div class="notification__alert-close">
+        <div class="notification__alert-close-bar"></div>
+        <div class="notification__alert-close-bar"></div>
+      </div>
+    </div>
+    <label for="popupPhone" class="popup__label"> Телефон </label>
+    <input
+      id="popupPhone"
+      name="popupPhone"
+      type="tel"
+      placeholder="+7"
+      class="contact-form__input contact-form__input--phone"
+    />
+    <div class="notification notification--phone-popup">
+      <p>
+        Заполните
+        <b> номер телефона</b>
+        полностью.
+      </p>
+      <div class="notification__alert-close">
+        <div class="notification__alert-close-bar"></div>
+        <div class="notification__alert-close-bar"></div>
+      </div>
+    </div>
+    <button type="submit" class="button-primary">Отправить</button>
+    <div class="contact-form__personal-group">
+      <div class="contact-form__item-check">
+        <input
+          name="popupCheckbox"
+          type="checkbox"
+          checked
+          class="contact-form__checkbox"
+        />
+      </div>
+      <div class="politics politics__text-center">
+        Я даю свое согласие с
+        <a href="#" class="contact-form__privacy-policy"
+          >политикой конфиденциальности</a
+        >,
+        <a href="#" class="contact-form__user-agreement"
+          >пользовательским соглашением</a
+        >
+        и даю разрешение на обработку персональных данных.
+      </div>
+    </div>
+    <div class="notification notification--checkbox-popup">
+      <p>
+        Поле согласия с
+        <b> политикой конфиденциальности</b>
+        обязательное.
+      </p>
+      <div class="notification__alert-close">
+        <div class="notification__alert-close-bar"></div>
+        <div class="notification__alert-close-bar"></div>
+      </div>
+    </div>
+  </form>
+</div>

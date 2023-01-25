@@ -1,0 +1,269 @@
+.hero {
+  position: relative;
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: -118px;
+    width: 50%;
+    height: 90%;
+    object-fit: cover;
+    object-position: 81% 0;
+    border-radius: 0 0 0 140px;
+
+    @media (max-width: 1460px) {
+      width: 100%;
+      object-position: 12% 38%;
+
+      z-index: -1;
+
+      filter: brightness(0.7);
+    }
+
+    @media (max-width: 878px) {
+      height: 303px;
+      border-radius: 24px;
+
+      object-position: center;
+
+      filter: none;
+
+      position: static;
+    }
+
+    @media (max-width: 620px) {
+      height: 250px;
+    }
+
+    @media (max-width: 480px) {
+      height: 200px;
+    }
+  }
+
+  &__benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 200px;
+
+    @media (max-width: 878px) {
+      padding-top: 60px;
+    }
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & li {
+      width: 33.333%;
+
+      font-weight: 600;
+      text-align: center;
+
+      align-self: stretch;
+
+      @media (max-width: 650px) {
+        width: auto;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+
+      & p {
+        &:first-child {
+          margin-bottom: 14px;
+
+          font-size: 30px;
+
+          color: $primary;
+        }
+
+        &:last-child {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.hero__main-content {
+  @media (max-width: 878px) {
+    margin-top: 130px;
+
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 122px;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: 112px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 90px;
+  }
+
+  @media (max-width: 374px) {
+    margin-top: 84px;
+  }
+
+  @media (max-width: 279px) {
+    margin-top: 151px;
+  }
+}
+
+.hero-block {
+  width: 50%;
+  padding-right: 40px;
+  margin-top: 200px;
+
+  position: relative;
+
+  @media (max-width: 1460px) {
+    max-width: 560px;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  @media (max-width: 878px) {
+    max-width: 540px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    & .button-primary {
+      width: 100%;
+    }
+  }
+
+  &::before {
+    width: 138px;
+    height: 128px;
+    border-radius: 50%;
+
+    top: -126px;
+    right: -70px;
+
+    z-index: -1;
+
+    background-color: #e4f0ff;
+
+    position: absolute;
+
+    content: "";
+
+    @media (max-width: 1240px) {
+      display: none;
+    }
+  }
+}
+
+.hero-top-block {
+  max-width: 1100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 30px;
+  letter-spacing: 1px;
+
+  @media (max-width: 1460px) {
+    color: white;
+  }
+
+  @media (max-width: 878px) {
+    font-size: 27px;
+
+    letter-spacing: normal;
+
+    color: $text-color;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 389px) {
+    font-size: 20px;
+
+    text-align: left;
+  }
+
+  & span {
+    color: #1359d6;
+
+    @media (max-width: 1460px) {
+      color: white;
+    }
+
+    @media (max-width: 878px) {
+      color: #1359d6;
+    }
+  }
+}
+
+.hero-p-title {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+
+  @media (max-width: 1460px) {
+    color: white;
+  }
+
+  @media (max-width: 878px) {
+    margin-bottom: 22px;
+
+    font-size: 14px;
+
+    color: $text-color;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 16px;
+
+    font-size: 13px;
+    letter-spacing: normal;
+  }
+
+  @media (max-width: 389px) {
+    text-align: left;
+  }
+
+  @media (max-width: 279px) {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .p-title-hero {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.3rem;
+    margin-top: 2rem;
+  }
+}
