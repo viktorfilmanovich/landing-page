@@ -73,6 +73,12 @@ input {
   font-family: inherit;
 }
 
+input[type="text"],
+input[type="submit"],
+textarea {
+  appearance: none;
+}
+
 button {
   padding: 0;
   font-family: inherit;
