@@ -2,11 +2,14 @@
   <div class="container">
     <div class="about__content">
       <div class="about__img-container">
-        <img
-          class="about__img"
-          src="assets/images/about.jpg"
-          alt="Мастер установки кондиционеров"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/about.webp" />
+          <img
+            class="about__img"
+            src="assets/images/about.jpg"
+            alt="Мастер установки кондиционеров"
+          />
+        </picture>
       </div>
       <h2 class="about__title">Давайте знакомиться</h2>
       <p class="about__paragraph1">
@@ -30,6 +33,8 @@
           class="about__contacts"
         >
           <img
+            width="30"
+            height="30"
             class="about__contacts-svg"
             src="assets/images/icons/whatsapp.svg"
             alt="whatsapp"

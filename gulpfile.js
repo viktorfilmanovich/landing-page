@@ -29,6 +29,8 @@ const path = {
     js: `${distPath}assets/js/`,
     images: `${distPath}/assets/images/`,
     fonts: `${distPath}assets/fonts/`,
+
+    responseImg: `${distPath}assets/responseImg/`,
   },
   src: {
     html: `${srcPath}*.html`,
@@ -150,7 +152,7 @@ function images() {
 }
 
 function webpImages() {
-  return src(path.src.images, { base: `${srcPath}/assets/img/` })
+  return src(path.src.images, { base: `${srcPath}/assets/images/` })
     .pipe(imagewebp())
     .pipe(dest(path.build.images));
 }
@@ -185,6 +187,7 @@ exports.js = js;
 exports.images = images;
 exports.webpImages = webpImages;
 exports.fonts = fonts;
+
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;

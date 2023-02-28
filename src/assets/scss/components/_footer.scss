@@ -93,6 +93,17 @@ footer {
   }
 }
 
+.footer-center {
+  font-size: 12px;
+  max-width: 370px;
+  padding: 24px 0;
+
+  @media (max-width: 680px) {
+    text-align: center;
+    margin: auto;
+  }
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;

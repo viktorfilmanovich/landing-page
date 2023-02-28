@@ -8,52 +8,52 @@ const buttonNext = document.querySelector(".slider-btn-next");
 
 const products = [
   {
-    imageUrl: "../../assets/images/slider/tcl-tac-07chsa.jpg",
+    imageUrl: "../../assets/images/slider/tcl-tac-07chsa",
     name: "Кондиционер настенный (сплит-система) TCL TAC-07CHSA/TPG [вентиляция, обогрев, осушение, охлаждение, до 20 м²]",
     price: 14999,
   },
   {
-    imageUrl: "../../assets/images/slider/dexp-ac-ch9onf.jpg",
+    imageUrl: "../../assets/images/slider/dexp-ac-ch9onf",
     name: "Кондиционер настенный (сплит-система) DEXP AC-CH9ONF [вентиляция, обогрев, осушение, охлаждение, до 25 м², 34 дБ]",
     price: 14999,
   },
   {
-    imageUrl: "../../assets/images/slider/lg-pc12sq.jpg",
+    imageUrl: "../../assets/images/slider/lg-pc12sq",
     name: "Кондиционер настенный (сплит-система) LG PC12SQ [инвертор, обогрев, осушение, охлаждение, до 35 м², 19 дБ]",
     price: 57299,
   },
   {
-    imageUrl: "../../assets/images/slider/centek-ct-65a09.jpg",
+    imageUrl: "../../assets/images/slider/centek-ct-65a09",
     name: "Кондиционер настенный (сплит-система) Centek CT-65A09 [осушение, вентиляция, обогрев, охлаждение, до 25 м², 23 дБ]",
     price: 20999,
   },
   {
-    imageUrl: "../../assets/images/slider/samsung-ar09aqhqdurner.jpg",
+    imageUrl: "../../assets/images/slider/samsung-ar09aqhqdurner",
     name: "Кондиционер настенный (сплит-система) Samsung AR09AQHQDURNER [вентиляция, обогрев, осушение, охлаждение, до 26 м²]",
     price: 34999,
   },
   {
-    imageUrl: "../../assets/images/slider/midea-msag2-12hrn1-i.jpg",
+    imageUrl: "../../assets/images/slider/midea-msag2-12hrn1-i",
     name: "Кондиционер настенный (сплит-система) Midea MSAG2-12HRN1-I / MSAG2-12HRN1-O [обогрев, осушение, охлаждение, до 35 м², 26.5 дБ]",
     price: 34799,
   },
   {
-    imageUrl: "../../assets/images/slider/tesla-ta36ffml-12410a.jpg",
+    imageUrl: "../../assets/images/slider/tesla-ta36ffml-12410a",
     name: "Кондиционер настенный (сплит-система) Tesla TA36FFML-12410A [вентиляция, обогрев, охлаждение, до 35 м², 27 дБ]",
     price: 26499,
   },
   {
-    imageUrl: "../../assets/images/slider/electrolux-eacs-09hg-m2.jpg",
+    imageUrl: "../../assets/images/slider/electrolux-eacs-09hg-m2",
     name: "Кондиционер настенный (сплит-система) Electrolux EACS-09HG-M2/N3 [обогрев, охлаждение, осушение, до 27 м², 25 дБ]",
     price: 33799,
   },
   {
-    imageUrl: "../../assets/images/slider/hisense-as-12hr4svddj3g.jpg",
+    imageUrl: "../../assets/images/slider/hisense-as-12hr4svddj3g",
     name: "Кондиционер настенный (сплит-система) Hisense AS-12HR4SVDDJ3G [вентиляция, обогрев, осушение, охлаждение, до 32 м², 31.5 дБ]",
     price: 44799,
   },
   {
-    imageUrl: "../../assets/images/slider/kentatsu-ksgp35hzrn1.jpg",
+    imageUrl: "../../assets/images/slider/kentatsu-ksgp35hzrn1",
     name: "Кондиционер настенный (сплит-система) Kentatsu KSGP35HZRN1 / KSRP35HZRN1 [инвертор, обогрев, охлаждение, до 35 м², 21 дБ]",
     price: 60299,
   },
@@ -80,9 +80,12 @@ const renderProducts = (blockWidth) => {
     .map(
       (product) => `<div class="slide" style="width:${blockWidth}px">
         <div class="card-item" data-id="1">
-            <img class="card-item__img" src="${product.imageUrl}" alt="${
-        product.name
-      }" />
+          <picture>
+            <source type="image/webp" srcset="${product.imageUrl + ".webp"}" />
+            <img width="150" height="150" class="card-item__img" src="${
+              product.imageUrl + ".jpg"
+            }" alt="${product.name}" />
+          </picture>
               <div class="card-item__rating">
                 <svg>
                   <use xlink:href="../../assets/images/icons/sprite.svg#full-star"></use>

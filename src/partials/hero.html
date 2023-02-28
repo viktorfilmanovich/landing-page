@@ -12,11 +12,28 @@
           <span class="flare"></span>
         </button>
       </div>
-      <img
-        src="assets/images/hero-image.jpg"
-        alt="Установка кондиционера"
-        class="hero__image"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          media="(max-width: 767px)"
+          srcset="assets/images/hero-image-767.webp"
+        />
+        <source
+          type="image/webp"
+          media="(min-width: 768px)"
+          srcset="assets/images/hero-image.webp"
+        />
+        <source
+          type="image/jpeg"
+          media="(max-width: 767px)"
+          srcset="assets/images/hero-image-767.jpg"
+        />
+        <img
+          src="assets/images/hero-image.jpg"
+          alt="Установка кондиционера"
+          class="hero__image"
+        />
+      </picture>
     </div>
     <ul class="hero__benefits">
       <li>
