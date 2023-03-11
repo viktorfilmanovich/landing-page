@@ -253,10 +253,16 @@ buttonPrevious.addEventListener("click", () => {
 });
 
 sliderContainer.addEventListener("mousedown", (e) => {
+  //Добавляем курсор grabbing при нажатии клавиши мыши
+  sliderContainer.style.cursor = "grabbing";
+
   mouseStartPosition = e.clientX;
 });
 
 sliderContainer.addEventListener("mouseup", (e) => {
+  //Добавляем курсор grab при отпускании клавиши мыши
+  sliderContainer.style.cursor = "grab";
+
   mouseEndPosition = e.clientX;
 
   if (paginatePosition === 0 && mouseEndPosition > mouseStartPosition) {
