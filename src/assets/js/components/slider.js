@@ -10,27 +10,27 @@ const products = [
   {
     imageUrl: "../../assets/images/slider/tcl-tac-07chsa",
     name: "Кондиционер настенный (сплит-система) TCL TAC-07CHSA/TPG [вентиляция, обогрев, осушение, охлаждение, до 20 м²]",
-    price: 14999,
+    price: 15999,
   },
   {
     imageUrl: "../../assets/images/slider/dexp-ac-ch9onf",
     name: "Кондиционер настенный (сплит-система) DEXP AC-CH9ONF [вентиляция, обогрев, осушение, охлаждение, до 25 м², 34 дБ]",
-    price: 14999,
+    price: 15999,
   },
   {
     imageUrl: "../../assets/images/slider/lg-pc12sq",
     name: "Кондиционер настенный (сплит-система) LG PC12SQ [инвертор, обогрев, осушение, охлаждение, до 35 м², 19 дБ]",
-    price: 57299,
+    price: 48799,
   },
   {
     imageUrl: "../../assets/images/slider/centek-ct-65a09",
     name: "Кондиционер настенный (сплит-система) Centek CT-65A09 [осушение, вентиляция, обогрев, охлаждение, до 25 м², 23 дБ]",
-    price: 20999,
+    price: 19399,
   },
   {
     imageUrl: "../../assets/images/slider/samsung-ar09aqhqdurner",
     name: "Кондиционер настенный (сплит-система) Samsung AR09AQHQDURNER [вентиляция, обогрев, осушение, охлаждение, до 26 м²]",
-    price: 34999,
+    price: 29999,
   },
   {
     imageUrl: "../../assets/images/slider/midea-msag2-12hrn1-i",
@@ -40,12 +40,12 @@ const products = [
   {
     imageUrl: "../../assets/images/slider/tesla-ta36ffml-12410a",
     name: "Кондиционер настенный (сплит-система) Tesla TA36FFML-12410A [вентиляция, обогрев, охлаждение, до 35 м², 27 дБ]",
-    price: 26499,
+    price: 31799,
   },
   {
     imageUrl: "../../assets/images/slider/electrolux-eacs-09hg-m2",
     name: "Кондиционер настенный (сплит-система) Electrolux EACS-09HG-M2/N3 [обогрев, охлаждение, осушение, до 27 м², 25 дБ]",
-    price: 33799,
+    price: 41799,
   },
   {
     imageUrl: "../../assets/images/slider/hisense-as-12hr4svddj3g",
@@ -287,13 +287,21 @@ sliderContainer.addEventListener("mouseup", (e) => {
   disabledOrEnabledPaginateButtons();
 });
 
-sliderContainer.addEventListener("touchstart", (e) => {
-  touchStart = e.touches[0].clientX;
-});
+sliderContainer.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStart = e.touches[0].clientX;
+  },
+  { passive: true }
+);
 
-sliderContainer.addEventListener("touchmove", (e) => {
-  touchMove = e.touches[0].clientX;
-});
+sliderContainer.addEventListener(
+  "touchmove",
+  (e) => {
+    touchMove = e.touches[0].clientX;
+  },
+  { passive: true }
+);
 
 sliderContainer.addEventListener("touchend", () => {
   if (paginatePosition === 0 && touchMove > touchStart) {
