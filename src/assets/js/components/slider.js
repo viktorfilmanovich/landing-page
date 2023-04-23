@@ -1,10 +1,10 @@
-const sliderContainer = document.querySelector(".slider-container");
 const containerOverflowHidden = document.querySelector(
-  ".container.overflow-hidden"
-);
-const paginationContainer = document.querySelector(".pagination-btns");
-const buttonPrevious = document.querySelector(".slider-btn-prev");
-const buttonNext = document.querySelector(".slider-btn-next");
+    ".container.overflow-hidden"
+  ),
+  slider = document.querySelector(".slider-container"),
+  paginationContainer = document.querySelector(".pagination-btns"),
+  prevButton = document.querySelector(".slider-btn-prev"),
+  nextButton = document.querySelector(".slider-btn-next");
 
 const products = [
   {
@@ -69,24 +69,93 @@ const products = [
   },
 ];
 
-let blocksOnWindow = 5;
-const padding = 30;
+let isDragging = false,
+  startPos = 0,
+  currentTranslate = 0,
+  prevTranslate = 0,
+  animationID,
+  currentIndex = 0,
+  slideWidth = 0,
+  slidesLengthOnWindow = 4,
+  padding = 30,
+  paginationButtons = null,
+  paginatePosition = 0,
+  swipeTreshold = 20;
 
-let paginatePosition = 0;
-let paginationButtons = null;
+slider.addEventListener("mousedown", touchStart);
+slider.addEventListener("mouseup", touchEnd);
+slider.addEventListener("mouseleave", touchEnd);
+slider.addEventListener("mousemove", touchMove);
 
-let productButtons = null;
+slider.addEventListener("touchstart", touchStart);
+slider.addEventListener("touchend", touchEnd);
+slider.addEventListener("touchcancel", touchEnd);
+slider.addEventListener("touchmove", touchMove);
 
-let mouseStartPosition = 0;
-let mouseEndPosition = 0;
+prevButton.addEventListener("click", () => {
+  currentIndex -= 1;
+  setPositionByIndex();
+});
 
-let touchStart = null;
-let touchMove = null;
+nextButton.addEventListener("click", () => {
+  currentIndex += 1;
+  setPositionByIndex();
+});
 
-let currentTranslate = 0;
+window.addEventListener("DOMContentLoaded", () => {
+  blockWidthCalc();
+});
 
-const renderProducts = (blockWidth) => {
-  sliderContainer.innerHTML = products
+window.addEventListener("resize", () => {
+  blockWidthCalc();
+});
+
+function disabledPaginationButtons() {
+  currentIndex === 0
+    ? prevButton.setAttribute("disabled", true)
+    : prevButton.removeAttribute("disabled");
+
+  currentIndex === products.length - slidesLengthOnWindow
+    ? nextButton.setAttribute("disabled", true)
+    : nextButton.removeAttribute("disabled");
+
+  paginationButtons.forEach((x, index) =>
+    index === currentIndex
+      ? x.children[0].classList.add("pagination-btn-span--active")
+      : x.children[0].classList.remove("pagination-btn-span--active")
+  );
+}
+
+function blockWidthCalc() {
+  if (window.innerWidth > 1350) {
+    slidesLengthOnWindow = 4;
+  }
+
+  if (window.innerWidth <= 1350) {
+    slidesLengthOnWindow = 3;
+  }
+
+  if (window.innerWidth <= 1000) {
+    slidesLengthOnWindow = 2;
+  }
+
+  if (window.innerWidth <= 820) {
+    slidesLengthOnWindow = 1;
+  }
+
+  slideWidth =
+    (containerOverflowHidden.clientWidth - padding) / slidesLengthOnWindow;
+
+  if (currentIndex > products.length - slidesLengthOnWindow)
+    currentIndex = products.length - slidesLengthOnWindow;
+
+  renderProducts(slideWidth);
+  renderPagination(slidesLengthOnWindow);
+  setPositionByIndex();
+}
+
+function renderProducts(blockWidth) {
+  slider.innerHTML = products
     .map(
       (product) => `<div class="slide" style="width:${blockWidth}px">
         <div class="card-item" data-id="1">
@@ -139,11 +208,11 @@ const renderProducts = (blockWidth) => {
       popup.classList.add("active");
     })
   );
-};
+}
 
-const renderPagination = (blocksOnWindow) => {
+function renderPagination(slidesLengthOnWindow) {
   paginationContainer.innerHTML = [
-    ...new Array(products.length + 1 - blocksOnWindow),
+    ...new Array(products.length + 1 - slidesLengthOnWindow),
   ]
     .map(
       (_) =>
@@ -152,188 +221,94 @@ const renderPagination = (blocksOnWindow) => {
     .join("");
 
   paginationButtons = document.querySelectorAll(".pagination-btn");
-
   paginationButtons[paginatePosition].children[0].classList.add(
     "pagination-btn-span--active"
   );
 
   paginationButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      paginatePosition = index;
+      currentIndex = index;
 
-      currentTranslate =
-        -((containerOverflowHidden.clientWidth - padding) / blocksOnWindow) *
-        paginatePosition;
-
-      sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-
-      disabledOrEnabledPaginateButtons();
+      setPositionByIndex();
     });
   });
-};
+}
 
-const disabledOrEnabledPaginateButtons = () => {
-  paginatePosition === 0
-    ? buttonPrevious.setAttribute("disabled", true)
-    : buttonPrevious.removeAttribute("disabled");
+function disabledPrevAndNextButtons() {
+  currentIndex === 0
+    ? prevButton.setAttribute("disabled", true)
+    : prevButton.removeAttribute("disabled");
 
-  paginatePosition === products.length - blocksOnWindow
-    ? buttonNext.setAttribute("disabled", true)
-    : buttonNext.removeAttribute("disabled");
+  currentIndex === products.length - slidesLengthOnWindow
+    ? nextButton.setAttribute("disabled", true)
+    : nextButton.removeAttribute("disabled");
+}
 
-  paginationButtons.forEach((x, index) =>
-    index === paginatePosition
-      ? x.children[0].classList.add("pagination-btn-span--active")
-      : x.children[0].classList.remove("pagination-btn-span--active")
-  );
-};
+function touchStart(e) {
+  startPos = getPositionX(e);
+  isDragging = true;
+  animationID = requestAnimationFrame(animation);
+  slider.classList.add("grabbing");
+}
 
-const blockWidthCalculation = () => {
-  if (window.innerWidth > 1350) {
-    blocksOnWindow = 4;
+function touchEnd() {
+  isDragging = false;
+  cancelAnimationFrame(animationID);
+
+  slider.classList.remove("grabbing");
+
+  const movedBy = currentTranslate - prevTranslate;
+
+  if (movedBy < -swipeTreshold) {
+    if (
+      Math.round(-currentTranslate / slideWidth) >
+      products.length - slidesLengthOnWindow
+    ) {
+      currentIndex = products.length - slidesLengthOnWindow;
+    } else {
+      currentIndex = Math.round(-currentTranslate / slideWidth);
+    }
   }
 
-  if (window.innerWidth <= 1350) {
-    blocksOnWindow = 3;
+  if (movedBy > swipeTreshold) {
+    if (Math.round(-currentTranslate / slideWidth) < 0) {
+      currentIndex = 0;
+    } else {
+      currentIndex = Math.round(-currentTranslate / slideWidth);
+    }
   }
 
-  if (window.innerWidth <= 1000) {
-    blocksOnWindow = 2;
+  setPositionByIndex();
+}
+
+function touchMove(e) {
+  if (isDragging) {
+    const currentPosition = getPositionX(e);
+    currentTranslate = prevTranslate + currentPosition - startPos;
   }
+}
 
-  if (window.innerWidth <= 560) {
-    blocksOnWindow = 1;
-  }
+function getPositionX(e) {
+  return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+}
 
-  renderProducts(
-    (containerOverflowHidden.clientWidth - padding) / blocksOnWindow
-  );
+function animation() {
+  setSliderPosition();
+  if (isDragging) requestAnimationFrame(animation);
+}
 
-  renderPagination(blocksOnWindow);
-};
-
-const next = () => {
+function setPositionByIndex() {
   currentTranslate =
-    currentTranslate -
-    (containerOverflowHidden.clientWidth - padding) / blocksOnWindow;
+    -((containerOverflowHidden.clientWidth - padding) / slidesLengthOnWindow) *
+    currentIndex;
 
-  sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+  prevTranslate = currentTranslate;
 
-  paginatePosition = paginatePosition + 1;
-};
+  setSliderPosition();
+  disabledPrevAndNextButtons();
+  disabledPaginationButtons();
+}
 
-const previous = () => {
-  currentTranslate =
-    currentTranslate +
-    (containerOverflowHidden.clientWidth - padding) / blocksOnWindow;
-
-  sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-
-  paginatePosition = paginatePosition - 1;
-};
-
-window.addEventListener("resize", () => {
-  blockWidthCalculation();
-
-  if (currentTranslate === 0) {
-    return;
-  } else if (currentTranslate < 0) {
-    currentTranslate =
-      (-(containerOverflowHidden.clientWidth - padding) / blocksOnWindow) *
-      paginatePosition;
-    sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-  } else {
-    currentTranslate =
-      ((containerOverflowHidden.clientWidth - padding) / blocksOnWindow) *
-      paginatePosition;
-    sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-  }
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  blockWidthCalculation();
-
-  disabledOrEnabledPaginateButtons();
-});
-
-buttonNext.addEventListener("click", () => {
-  next();
-  disabledOrEnabledPaginateButtons();
-});
-
-buttonPrevious.addEventListener("click", () => {
-  previous();
-  disabledOrEnabledPaginateButtons();
-});
-
-sliderContainer.addEventListener("mousedown", (e) => {
-  //Добавляем курсор grabbing при нажатии клавиши мыши
-  sliderContainer.style.cursor = "grabbing";
-
-  mouseStartPosition = e.clientX;
-});
-
-sliderContainer.addEventListener("mouseup", (e) => {
-  //Добавляем курсор grab при отпускании клавиши мыши
-  sliderContainer.style.cursor = "grab";
-
-  mouseEndPosition = e.clientX;
-
-  if (paginatePosition === 0 && mouseEndPosition > mouseStartPosition) {
-    return;
-  }
-
-  if (
-    paginatePosition === products.length - blocksOnWindow &&
-    mouseEndPosition < mouseStartPosition
-  ) {
-    return;
-  }
-
-  if (mouseEndPosition === mouseStartPosition) {
-    return;
-  } else if (mouseEndPosition < mouseStartPosition) {
-    next();
-  } else {
-    previous();
-  }
-
-  disabledOrEnabledPaginateButtons();
-});
-
-sliderContainer.addEventListener(
-  "touchstart",
-  (e) => {
-    touchStart = e.touches[0].clientX;
-  },
-  { passive: true }
-);
-
-sliderContainer.addEventListener(
-  "touchmove",
-  (e) => {
-    touchMove = e.touches[0].clientX;
-  },
-  { passive: true }
-);
-
-sliderContainer.addEventListener("touchend", () => {
-  if (paginatePosition === 0 && touchMove > touchStart) {
-    return;
-  }
-
-  if (
-    paginatePosition === products.length - blocksOnWindow &&
-    touchMove < touchStart
-  ) {
-    return;
-  }
-
-  if (touchMove != null) {
-    touchStart > touchMove ? next() : previous();
-  } else {
-    return;
-  }
-
-  disabledOrEnabledPaginateButtons();
-});
+function setSliderPosition() {
+  slider.style.transform = `translateX(${currentTranslate}px)`;
+}
