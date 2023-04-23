@@ -161,7 +161,7 @@ function renderProducts(blockWidth) {
         <div class="card-item" data-id="1">
           <picture>
             <source type="image/webp" srcset="${product.imageUrl + ".webp"}" />
-            <img width="150" height="150" class="card-item__img" src="${
+            <img width="auto" height="150" class="card-item__img" src="${
               product.imageUrl + ".jpg"
             }" alt="${product.name}" />
           </picture>
@@ -259,22 +259,24 @@ function touchEnd() {
 
   const movedBy = currentTranslate - prevTranslate;
 
+  // console.log(Math.round((-currentTranslate + 400) / slideWidth));
+
   if (movedBy < -swipeTreshold) {
     if (
-      Math.round(-currentTranslate / slideWidth) >
+      Math.round((-currentTranslate + 130) / slideWidth) >
       products.length - slidesLengthOnWindow
     ) {
       currentIndex = products.length - slidesLengthOnWindow;
     } else {
-      currentIndex = Math.round(-currentTranslate / slideWidth);
+      currentIndex = Math.round((-currentTranslate + 130) / slideWidth);
     }
   }
 
   if (movedBy > swipeTreshold) {
-    if (Math.round(-currentTranslate / slideWidth) < 0) {
+    if (Math.round((-currentTranslate - 130) / slideWidth) < 0) {
       currentIndex = 0;
     } else {
-      currentIndex = Math.round(-currentTranslate / slideWidth);
+      currentIndex = Math.round((-currentTranslate - 130) / slideWidth);
     }
   }
 
