@@ -101,7 +101,7 @@ header {
 
     visibility: hidden;
     opacity: 0;
-    filter: blur(2px);
+    // filter: blur(2px);
 
     transition: $transition;
   }
@@ -111,7 +111,7 @@ header {
 
     visibility: visible;
     opacity: 1;
-    filter: none;
+    // filter: none;
 
     transition: $transition;
   }
