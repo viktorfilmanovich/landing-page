@@ -82,15 +82,15 @@ let isDragging = false,
   paginatePosition = 0,
   swipeTreshold = 20;
 
-slider.addEventListener("mousedown", touchStart);
-slider.addEventListener("mouseup", touchEnd);
-slider.addEventListener("mouseleave", touchEnd);
-slider.addEventListener("mousemove", touchMove);
+slider.addEventListener("mousedown", touchStart, { passive: true });
+slider.addEventListener("mouseup", touchEnd, { passive: true });
+slider.addEventListener("mouseleave", touchEnd, { passive: true });
+slider.addEventListener("mousemove", touchMove, { passive: true });
 
-slider.addEventListener("touchstart", touchStart);
-slider.addEventListener("touchend", touchEnd);
-slider.addEventListener("touchcancel", touchEnd);
-slider.addEventListener("touchmove", touchMove);
+slider.addEventListener("touchstart", touchStart, { passive: true });
+slider.addEventListener("touchend", touchEnd, { passive: true });
+slider.addEventListener("touchcancel", touchEnd, { passive: true });
+slider.addEventListener("touchmove", touchMove, { passive: true });
 
 prevButton.addEventListener("click", () => {
   currentIndex -= 1;
@@ -161,7 +161,7 @@ function renderProducts(blockWidth) {
         <div class="card-item" data-id="1">
           <picture>
             <source type="image/webp" srcset="${product.imageUrl + ".webp"}" />
-            <img width="auto" height="150" class="card-item__img" src="${
+            <img width="150" height="150" class="card-item__img" src="${
               product.imageUrl + ".jpg"
             }" alt="${product.name}" />
           </picture>
@@ -216,7 +216,7 @@ function renderPagination(slidesLengthOnWindow) {
   ]
     .map(
       (_) =>
-        `<button type="button" class="pagination-btn"><span class="pagination-btn-span"></span></button>`
+        `<button type="button" aria-label="Пролистнуть слайд" class="pagination-btn"><span class="pagination-btn-span"></span></button>`
     )
     .join("");
 

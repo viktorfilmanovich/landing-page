@@ -1,14 +1,17 @@
 .about {
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 110px;
+  padding-bottom: 40px;
 
-  @media (max-width: 878px) {
-    padding-top: 70px;
+  @media (max-width: 1200px) {
     padding-bottom: 10px;
   }
 
-  @media (max-width: 650px) {
-    padding-bottom: 20px;
+  @media (max-width: 878px) {
+    padding-top: 70px;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 46px;
   }
 
   &__content {
@@ -60,7 +63,7 @@
       font-size: 17px;
       line-height: 1.4;
 
-      color: #3d3d3d;
+      // color: #3d3d3d;
 
       @media (max-width: 1200px) {
         margin-bottom: 16px;
@@ -118,6 +121,8 @@
     padding-top: 30px;
     padding-bottom: 10px;
     text-align: left;
+    font-size: 28px;
+    font-weight: 600;
 
     position: relative;
 
@@ -133,6 +138,15 @@
 
     @media (max-width: 878px) {
       padding-bottom: 20px;
+
+      font-size: 24px;
+    }
+
+    @media (max-width: 830px) {
+      padding-top: 60px;
+      padding-bottom: 30px;
+
+      text-align: center;
     }
 
     &::before {
@@ -149,6 +163,15 @@
       position: absolute;
 
       content: "";
+
+      @media (max-width: 830px) {
+        top: 30px;
+        left: 26%;
+      }
+
+      @media (max-width: 630px) {
+        left: 16%;
+      }
     }
   }
 
@@ -166,7 +189,7 @@
 
   &__contacts-group {
     @media (max-width: 1200px) {
-      padding-top: 10px;
+      padding-top: 50px;
 
       justify-content: center;
 
@@ -175,7 +198,7 @@
       }
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 630px) {
       flex-direction: column;
     }
 
@@ -193,7 +216,7 @@
     & .button-primary {
       margin-right: 40px;
 
-      @media (max-width: 540px) {
+      @media (max-width: 630px) {
         margin-right: 0;
         margin-bottom: 36px;
       }
@@ -205,8 +228,7 @@
     align-items: center;
 
     &-svg {
-      margin-right: 11px;
-      width: 30px;
+      margin-right: 18px;
       border-radius: 8px;
 
       display: block;

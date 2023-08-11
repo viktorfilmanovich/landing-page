@@ -45,6 +45,12 @@
     padding-bottom: 60px;
   }
 
+  & .text-title {
+    padding: 60px 0 24px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
   & .contact-form {
     width: 420px;
     margin-left: auto;
@@ -91,15 +97,6 @@
     @media (max-width: 740px) {
       width: 80px;
     }
-  }
-}
-
-.consultation__item-title {
-  padding-bottom: 20px;
-  font-weight: 500;
-
-  @media (max-width: 650px) {
-    padding-top: 40px;
   }
 }
 

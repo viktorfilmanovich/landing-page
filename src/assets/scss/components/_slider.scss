@@ -7,6 +7,15 @@
 
   position: relative;
   background-color: white;
+
+  & .text-title {
+    padding: 50px 0 80px;
+
+    @media (max-width: 878px) {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+  }
 }
 
 .slider-wrapper {
@@ -114,19 +123,7 @@
   }
 
   @media (max-width: 700px) {
-    grid-template-rows: 150px auto 110px auto auto;
-  }
-
-  @media (max-width: 560px) {
-    grid-template-rows: 150px auto 84px auto auto;
-  }
-
-  @media (max-width: 390px) {
-    width: 94%;
-  }
-
-  @media (max-width: 350px) {
-    grid-template-rows: 150px auto 100px auto auto;
+    grid-template-rows: auto;
   }
 
   &__img {
@@ -218,6 +215,11 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 878px) {
+    padding-top: 40px;
+    max-width: 200px;
+  }
 }
 
 .pagination-btn {
@@ -237,6 +239,12 @@
   background-color: #d8d8d8;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+
+  @media (max-width: 878px) {
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+  }
 }
 
 .pagination-btn-span--active {
@@ -244,6 +252,11 @@
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
   height: 4px;
+
+  @media (max-width: 878px) {
+    height: 8px;
+    width: 8px;
+  }
 }
 
 .grabbing {
