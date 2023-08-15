@@ -128,8 +128,8 @@
 
   &__img {
     height: 150px;
-
     pointer-events: none;
+    object-fit: cover;
   }
 
   &__rating {

@@ -160,10 +160,17 @@ function renderProducts(blockWidth) {
       (product) => `<div class="slide" style="width:${blockWidth}px">
         <div class="card-item" data-id="1">
           <picture>
-            <source type="image/webp" srcset="${product.imageUrl + ".webp"}" />
-            <img width="150" height="150" class="card-item__img" src="${
-              product.imageUrl + ".jpg"
-            }" alt="${product.name}" />
+            <source
+              type="image/webp"
+              srcset="${product.imageUrl + ".webp"}"
+            />
+            <img
+              width="150"
+              height="150"
+              src="${product.imageUrl + ".jpg"}"
+              alt="${product.name}"
+              class="card-item__img"
+            />
           </picture>
               <div class="card-item__rating">
                 <svg>
