@@ -2,6 +2,15 @@ const closePopupButton = document.querySelector(".popup__close-button");
 const popupBackground = document.querySelector(".popup-background");
 const popup = document.querySelector(".popup");
 
+const openPopupButtons = document.querySelectorAll(".open-popup");
+
+openPopupButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    popupBackground.classList.add("active");
+    popup.classList.add("active");
+  })
+);
+
 const closingModal = () => {
   popupBackground.classList.remove("active");
   popup.classList.remove("active");

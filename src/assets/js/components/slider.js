@@ -92,18 +92,14 @@ slider.addEventListener("touchend", touchEnd, { passive: true });
 slider.addEventListener("touchcancel", touchEnd, { passive: true });
 slider.addEventListener("touchmove", touchMove, { passive: true });
 
-prevButton.addEventListener("click", () => {
+prevButton.addEventListener("mousedown", () => {
   currentIndex -= 1;
   setPositionByIndex();
 });
 
-nextButton.addEventListener("click", () => {
+nextButton.addEventListener("mousedown", () => {
   currentIndex += 1;
   setPositionByIndex();
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  blockWidthCalc();
 });
 
 window.addEventListener("resize", () => {
@@ -266,8 +262,6 @@ function touchEnd() {
 
   const movedBy = currentTranslate - prevTranslate;
 
-  // console.log(Math.round((-currentTranslate + 400) / slideWidth));
-
   if (movedBy < -swipeTreshold) {
     if (
       Math.round((-currentTranslate + 130) / slideWidth) >
@@ -321,3 +315,5 @@ function setPositionByIndex() {
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`;
 }
+
+blockWidthCalc();
