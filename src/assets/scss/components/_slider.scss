@@ -9,7 +9,7 @@
   background-color: white;
 
   & .text-title {
-    padding: 50px 0 80px;
+    padding: 50px 0 20px;
 
     @media (max-width: 878px) {
       padding-top: 20px;
@@ -24,7 +24,7 @@
 
 .slider-btn {
   z-index: 1;
-  top: 50%;
+  top: 56%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
@@ -98,33 +98,18 @@
 
 .slide {
   height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
 }
 
 .card-item {
-  width: 80%;
-
   display: grid;
-  grid-template-rows: 150px auto 114px auto auto;
+  grid-template-rows: 150px auto 60px auto auto;
+  grid-template-columns: 230px;
   align-items: center;
   justify-items: center;
 
   user-select: none;
-
-  @media (max-width: 1260px) {
-    width: 84%;
-  }
-
-  @media (max-width: 1000px) {
-    grid-template-rows: 150px auto 90px auto auto;
-  }
-
-  @media (max-width: 700px) {
-    grid-template-rows: auto;
-  }
 
   &__img {
     height: 150px;
@@ -134,7 +119,6 @@
 
   &__rating {
     width: 80px;
-    margin-top: 20px;
     margin-bottom: 14px;
 
     display: inline-flex;
@@ -168,58 +152,30 @@
   }
 
   &__title {
-    margin-top: 0;
-    font-size: 17px;
     line-height: 1.4;
     font-weight: 400;
+    font-size: 16px;
     text-align: center;
-
     align-self: flex-start;
-
-    @media (max-width: 1130px) {
-      margin-bottom: 20px;
-
-      font-size: 16px;
-    }
-
-    @media (max-width: 560px) {
-      align-self: center;
-    }
-
-    @media (max-width: 279px) {
-      margin-bottom: 14px;
-
-      font-size: 15px;
-    }
-
-    @media (max-width: 259px) {
-      font-size: 14px;
-    }
   }
 
   &__price {
-    margin-bottom: 20px;
-
-    font-size: 22px;
+    margin-bottom: 16px;
+    font-size: 20px;
     font-weight: 500;
   }
 
   & .button-primary {
-    width: 80%;
+    width: 140px;
   }
 }
 
 .pagination-btns {
-  padding-top: 60px;
-  max-width: 260px;
-  margin: auto;
+  padding-top: 40px;
+  max-width: 200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: 878px) {
-    padding-top: 40px;
-    max-width: 200px;
-  }
 }
 
 .pagination-btn {
@@ -233,30 +189,18 @@
 }
 
 .pagination-btn-span {
-  width: 100%;
-  height: 2px;
-  border-radius: 2px;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
   background-color: #d8d8d8;
-  -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
-
-  @media (max-width: 878px) {
-    height: 4px;
-    width: 4px;
-    border-radius: 50%;
-  }
 }
 
 .pagination-btn-span--active {
   background-color: $primary;
-  -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
-  height: 4px;
-
-  @media (max-width: 878px) {
-    height: 8px;
-    width: 8px;
-  }
+  height: 8px;
+  width: 8px;
 }
 
 .grabbing {

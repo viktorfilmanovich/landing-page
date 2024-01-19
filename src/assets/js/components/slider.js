@@ -8,64 +8,66 @@ const containerOverflowHidden = document.querySelector(
 
 const products = [
   {
-    imageUrl: "../../assets/images/slider/tcl-tac-07chsa",
-    name: "Кондиционер настенный (сплит-система) TCL TAC-07CHSA/TPG [вентиляция, обогрев, осушение, охлаждение, до 20 м²]",
-    price: 15999,
-    rating: 5.2,
+    imageUrl: "../../assets/images/slider/electrolux-air-gate-2-eacs-12hg-m2n3",
+    name: "Сплит-система Electrolux Air Gate 2 EACS-12HG-M2N3",
+    price: 19690,
+    rating: 10,
   },
   {
-    imageUrl: "../../assets/images/slider/dexp-ac-ch9onf",
-    name: "Кондиционер настенный (сплит-система) DEXP AC-CH9ONF [вентиляция, обогрев, осушение, охлаждение, до 25 м², 34 дБ]",
-    price: 15999,
-    rating: 8.8,
+    imageUrl: "../../assets/images/slider/zanussi-paradiso-zacs-18-hpr-a18-n1",
+    name: "Сплит-система Zanussi Paradiso ZACS-18 HPR/A18/N1",
+    price: 48190,
+    rating: 6,
   },
   {
-    imageUrl: "../../assets/images/slider/lg-pc12sq",
-    name: "Кондиционер настенный (сплит-система) LG PC12SQ [инвертор, обогрев, осушение, охлаждение, до 35 м², 19 дБ]",
-    price: 48799,
-    rating: 3.1,
+    imageUrl: "../../assets/images/slider/ballu-bravo-bsq-36hn1-14y",
+    name: "Сплит-система Ballu Bravo BSQ-36HN1_14Y",
+    price: 53990,
+    rating: 4,
   },
   {
-    imageUrl: "../../assets/images/slider/centek-ct-65a09",
-    name: "Кондиционер настенный (сплит-система) Centek CT-65A09 [осушение, вентиляция, обогрев, охлаждение, до 25 м², 23 дБ]",
-    price: 19399,
-    rating: 6.9,
+    imageUrl: "../../assets/images/slider/toshiba-shorai-edge-ras-18j2vsg-ee",
+    name: "Сплит-система TOSHIBA Shorai Edge RAS-18J2VSG-EE",
+    price: 69990,
+    rating: 7,
   },
   {
-    imageUrl: "../../assets/images/slider/samsung-ar09aqhqdurner",
-    name: "Кондиционер настенный (сплит-система) Samsung AR09AQHQDURNER [вентиляция, обогрев, осушение, охлаждение, до 26 м²]",
-    price: 29999,
-    rating: 4.7,
+    imageUrl: "../../assets/images/slider/shuft-sftmi-18hn1",
+    name: "Сплит-система SHUFT SFTMI-18HN1",
+    price: 86690,
+    rating: 8,
   },
   {
-    imageUrl: "../../assets/images/slider/midea-msag2-12hrn1-i",
-    name: "Кондиционер настенный (сплит-система) Midea MSAG2-12HRN1-I / MSAG2-12HRN1-O [обогрев, осушение, охлаждение, до 35 м², 26.5 дБ]",
-    price: 34799,
-    rating: 9.5,
+    imageUrl: "../../assets/images/slider/ac-electric-acem-18hn1-23y",
+    name: "Сплит-система AC ELECTRIC ACEM-18HN1_23Y",
+    price: 109990,
+    rating: 5,
   },
   {
-    imageUrl: "../../assets/images/slider/tesla-ta36ffml-12410a",
-    name: "Кондиционер настенный (сплит-система) Tesla TA36FFML-12410A [вентиляция, обогрев, охлаждение, до 35 м², 27 дБ]",
-    price: 31799,
-    rating: 7.6,
+    imageUrl: "../../assets/images/slider/neoline-nag-24hn1",
+    name: "Сплит-система NEOLINE NAG-24HN1",
+    price: 116990,
+    rating: 10,
   },
   {
-    imageUrl: "../../assets/images/slider/electrolux-eacs-09hg-m2",
-    name: "Кондиционер настенный (сплит-система) Electrolux EACS-09HG-M2/N3 [обогрев, охлаждение, осушение, до 27 м², 25 дБ]",
-    price: 41799,
-    rating: 8.4,
+    imageUrl: "../../assets/images/slider/komanchi-kat-24h-n1",
+    name: "Сплит-система KOMANCHI KAT-24H/N1",
+    price: 117990,
+    rating: 5,
   },
   {
-    imageUrl: "../../assets/images/slider/hisense-as-12hr4svddj3g",
-    name: "Кондиционер настенный (сплит-система) Hisense AS-12HR4SVDDJ3G [вентиляция, обогрев, осушение, охлаждение, до 32 м², 31.5 дБ]",
-    price: 44799,
-    rating: 3.3,
+    imageUrl:
+      "../../assets/images/slider/electrolux-monaco-super-dc-nverter-eacs-i-18hm-n3-15y",
+    name: "Сплит-система Electrolux Monaco Super DC Inverter EACS/I-18HM/N3_15Y",
+    price: 21390,
+    rating: 7,
   },
   {
-    imageUrl: "../../assets/images/slider/kentatsu-ksgp35hzrn1",
-    name: "Кондиционер настенный (сплит-система) Kentatsu KSGP35HZRN1 / KSRP35HZRN1 [инвертор, обогрев, охлаждение, до 35 м², 21 дБ]",
-    price: 60299,
-    rating: 9.1,
+    imageUrl:
+      "../../assets/images/slider/zanussi-elegante-dc-inverter-zacs-i-12-he-a18-n1",
+    name: "Сплит-система Zanussi Elegante DC Inverter ZACS/I-12 HE/A18/N1",
+    price: 48190,
+    rating: 5,
   },
 ];
 
@@ -154,7 +156,7 @@ function renderProducts(blockWidth) {
   slider.innerHTML = products
     .map(
       (product) => `<div class="slide" style="width:${blockWidth}px">
-        <div class="card-item" data-id="1">
+        <div class="card-item">
           <picture>
             <source
               type="image/webp"
@@ -189,14 +191,14 @@ function renderProducts(blockWidth) {
                 }%"></div>
               </div>
               <h3 class="card-item__title">${
-                product.name.length > 78
-                  ? product.name.slice(0, 78) + "..."
+                product.name.length > 44
+                  ? product.name.slice(0, 44) + "..."
                   : product.name
               }</h3>
               <p class="card-item__price">${product.price.toLocaleString(
                 "ru-RU"
               )} ₽</p>
-              <button data-cart="" type="button" class="button-primary open-popup">Купить</button>
+              <button class="button-primary open-popup">Установить</button>
         </div>
       </div>
         `

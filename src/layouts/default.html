@@ -4,24 +4,16 @@
     {{> head }}
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KXMFCZN"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     {{> header }}
-    <main>
-      {{> hero}} {{> about}} {{> services}} {{> slider}} {{> faq}} {{>
-      consultation}}
-    </main>
+    <main>{{> body }}</main>
     {{> footer }} {{> popup}} {{> thanks}}
-
-    <script defer src="assets/js/main.js"></script>
-    <!-- <script async src="assets/js/tracking-connection.min.js"></script> -->
+    <script defer src="assets/js/main.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TY8MC8L4Z1"
+    ></script>
+    <script async src="assets/js/tracking-code-bundle.min.js"></script>
+    <!-- End Google tag (gtag.js) -->
   </body>
 </html>

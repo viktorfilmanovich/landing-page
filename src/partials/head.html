@@ -14,7 +14,7 @@
 />
 <meta
   property="og:title"
-  content="Установка кондиционера в Сочи от компании Condi-K. Гарантия 1 год"
+  content="Установка кондиционера в Сочи от компании Кондик. Гарантия 1 год"
 />
 <meta
   property="og:description"
@@ -32,6 +32,22 @@
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="prefetch" as="image" href="assets/images/icons/whatsapp.svg" />
+<link rel="prefetch" as="image" href="assets/images/icons/phone.svg" />
+<link
+  rel="prefetch"
+  as="image"
+  href="assets/images/hero-image-960.webp"
+  type="image/webp"
+  media="(max-width: 767px)"
+/>
+<link
+  rel="prefetch"
+  as="image"
+  href="assets/images/hero-image-960.jpg"
+  type="image/jpeg"
+  media="(max-width: 767px)"
+/>
 <link
   rel="preload"
   href="/assets/fonts/Rubik/Rubik-Bold.woff"
@@ -60,5 +76,16 @@
   type="font/woff"
   crossorigin
 />
-<link rel="stylesheet" href="assets/css/app.min.css" />
+<style type="text/css">
+  /* css */
+</style>
+<link
+  rel="preload"
+  href="assets/css/app.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link rel="stylesheet" href="assets/css/app.min.css" />
+</noscript>
 <title>{{ title }}</title>

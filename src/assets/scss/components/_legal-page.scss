@@ -1,0 +1,69 @@
+.legal {
+  padding-top: 120px;
+  padding-bottom: 60px;
+
+  &__title,
+  &__second-title,
+  & strong {
+    color: lighten($text-color, 5%);
+  }
+
+  &__title {
+    font-size: 30px;
+
+    @media (max-width: 640px) {
+      font-size: 24px;
+    }
+  }
+
+  &__second-title {
+    margin-top: 30px;
+    margin-bottom: 16px;
+    font-size: 22px;
+
+    @media (max-width: 640px) {
+      font-size: 20px;
+    }
+  }
+
+  & p,
+  & ol,
+  & ul {
+    font-size: 16px;
+  }
+
+  & p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: lighten($text-color, 10%);
+  }
+
+  &__link {
+    color: #0067c9;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken(#0067c9, 10%);
+    }
+  }
+
+  & ol {
+    & li {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  & ul {
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    list-style-type: disc;
+
+    & li {
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
