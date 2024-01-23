@@ -1,11 +1,9 @@
 const formPopup = document.querySelector(".contact-form--popup");
-
 const inputNamePopup = formPopup.querySelector('input[name="popupName"]');
 const inputPhonePopup = formPopup.querySelector('input[name="popupPhone"]');
 const inputCheckboxPopup = formPopup.querySelector(
   'input[name="popupCheckbox"]'
 );
-
 const nameNotificationPopup = document.querySelector(
   ".notification--name-popup"
 );

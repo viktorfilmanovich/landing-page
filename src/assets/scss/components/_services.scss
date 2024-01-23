@@ -1,20 +1,33 @@
 .services {
-  padding-bottom: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f6fbff;
 
-  @media (max-width: 878px) {
-    padding-bottom: 40px;
+  @media (max-width: 991px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
-  @media (max-width: 650px) {
-    padding-bottom: 20px;
+  @media (max-width: 575px) {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  & .text-title {
+    padding-bottom: 50px;
+
+    @media (max-width: 575px) {
+      padding-bottom: 20px;
+      text-align: left;
+    }
   }
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     gap: 12px;
 
-    @media (max-width: 374px) {
+    @media (max-width: 767px) {
       grid-template-columns: 1fr;
     }
   }
@@ -22,13 +35,10 @@
 
 .card {
   border-radius: 10px;
-  transition: 0.5s;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 14%);
-
+  box-shadow: 0px 0px 20px 2px #0000000d;
   background-color: white;
-
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 34px 34px 34px 1fr auto;
 
   &:nth-child(2) {
     transition-delay: 200ms;
@@ -43,34 +53,12 @@
   }
 
   &:hover {
-    box-shadow: 0 4px 8px rgb(0 0 0 / 35%);
-  }
-}
-
-.card__price {
-  font-size: 21px;
-  font-weight: 500;
-}
-
-.card__list-items {
-  margin-bottom: 28px;
-  padding-left: 16px;
-
-  font-size: 16px;
-  line-height: 1.5;
-
-  flex-grow: 1;
-
-  @media (max-width: 375px) {
-    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
   }
 
-  & li {
-    list-style-type: disc;
-
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
+  & .button-primary {
+    margin: 0 20px 20px;
   }
 }
 
@@ -87,25 +75,38 @@
 }
 
 .card__title {
-  margin-top: 15px;
-  margin-bottom: 12px;
-
-  font-size: 19px;
+  width: max-content;
+  padding: 0 20px;
+  font-size: 20px;
   font-weight: 500;
 }
 
-.card__text-container {
-  height: 100%;
-  padding: 0px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card__price {
+  padding: 0 20px;
+  font-size: 20px;
 }
 
 .card__text-item {
-  margin-top: 21px;
-  margin-bottom: 18px;
+  padding: 0 20px;
   font-size: 16px;
+  color: #656565;
+}
+
+.card__list-items {
+  padding: 0 20px 20px 36px;
+  font-size: 16px;
+
+  @media (max-width: 375px) {
+    font-size: 1rem;
+  }
+
+  & li {
+    list-style-type: disc;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 .h3-top-cards {

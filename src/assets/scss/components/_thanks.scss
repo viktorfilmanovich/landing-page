@@ -6,25 +6,17 @@
   left: 50%;
   top: 49%;
   transform: translate(-50%, -50%);
-  z-index: 1111;
+  z-index: 1;
   box-shadow: 0 4px 8px rgb(0 0 0 / 14%);
-
   position: fixed;
-
   visibility: hidden;
   opacity: 0;
   filter: blur(2px);
-
   transition: $transition;
-
   background-color: #fff;
 
-  @media (max-width: 480px) {
+  @media (max-width: 575px) {
     width: 91%;
-  }
-
-  @media (max-width: 360px) {
-    padding: 30px;
   }
 
   &.active {

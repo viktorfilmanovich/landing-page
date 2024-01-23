@@ -1,19 +1,14 @@
 header {
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 0;
   border-bottom: 1px solid #cdcdcd;
-
-  transition: 0.45s cubic-bezier(1, 0.56, 0, 0.45);
-
-  z-index: 999;
-
-  position: fixed;
-
   background-color: white;
 
-  @media (max-width: 279px) {
+  @media (max-width: 280px) {
     padding-bottom: 0;
   }
 }
@@ -23,7 +18,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 279px) {
+  @media (max-width: 280px) {
     display: grid;
     grid-template-areas:
       "logo logo"
@@ -35,28 +30,24 @@ header {
 }
 
 .header__burger {
-  z-index: 1111;
-
+  z-index: 1;
   cursor: pointer;
-
   display: none;
 
-  @media (max-width: 1460px) {
-    height: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  @media (max-width: 1399px) {
+    height: 26px;
+    display: grid;
+    align-content: space-between;
   }
 
-  @media (max-width: 279px) {
+  @media (max-width: 280px) {
     grid-area: burger;
   }
 
   & span {
-    width: 36px;
-    height: 3px;
-    border-radius: 3px;
+    width: 30px;
+    height: 2px;
+    border-radius: 2px;
     transition: 0.3s cubic-bezier(0.42, 0, 0, 1);
     background-color: #333;
   }
@@ -73,23 +64,19 @@ header {
     }
 
     &:nth-child(3) {
-      transform: translateY(-13px) rotate(-45deg);
+      transform: translateY(-11px) rotate(-45deg);
     }
   }
 }
 
 .header__menu {
-  margin-left: -156px;
-
+  // position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: relative;
-
-  z-index: 1;
-
-  @media (max-width: 1460px) {
+  @media (max-width: 1399px) {
     margin-left: 0;
 
     position: fixed;
@@ -98,21 +85,15 @@ header {
     height: 100vh;
     top: -1%;
     left: 0;
-
     visibility: hidden;
     opacity: 0;
-    // filter: blur(2px);
-
     transition: $transition;
   }
 
   &.active {
     top: 0;
-
     visibility: visible;
     opacity: 1;
-    // filter: none;
-
     transition: $transition;
   }
 }
@@ -121,7 +102,7 @@ header {
   font-size: 0.9rem;
   font-weight: 500;
 
-  @media (max-width: 1460px) {
+  @media (max-width: 1399px) {
     font-size: 20px;
   }
 
@@ -129,7 +110,7 @@ header {
     font-size: 18px;
   }
 
-  @media (max-width: 279px) {
+  @media (max-width: 280px) {
     font-size: 16px;
   }
 }
@@ -166,7 +147,7 @@ header {
   display: flex;
   align-items: center;
 
-  @media (max-width: 1460px) {
+  @media (max-width: 1399px) {
     margin-left: auto;
     margin-right: 22px;
   }

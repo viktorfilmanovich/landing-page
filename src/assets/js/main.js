@@ -1,9 +1,5 @@
-//= components/scrollAnimation.js
 //= components/maskPhone.js
-//= components/popupFormValidation.js
 //= components/popup.js
-//= components/thanks.js
-//= components/consultFormValidation.js
+//= components/popupFormValidation.js
 //= components/burger.js
-//= components/slider.js
-//= components/accordion.js
+//= components/thanks.js

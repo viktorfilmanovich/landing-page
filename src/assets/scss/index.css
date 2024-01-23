@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   .title__msg {
     display: grid;
     grid-gap: 0;
@@ -18,7 +18,7 @@
 }
 
 .popup-bg {
-  z-index: 1111;
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@
 }
 
 .popup {
-  z-index: 1111;
+  z-index: 1;
   justify-content: center;
   position: fixed;
   background: #fff;
@@ -93,7 +93,7 @@
   transform: translateY(0px) rotate(45deg);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   .popup .close-popup .bar:nth-child(2) {
     width: 25px;
   }
@@ -107,7 +107,7 @@
   padding: 2rem 30px 2rem;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   .right-block-form {
     width: 250px;
     height: 400px;
@@ -127,7 +127,7 @@
   margin: 8px 0 18px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   .title-form {
     font-weight: 600;
     font-size: 1.1rem;

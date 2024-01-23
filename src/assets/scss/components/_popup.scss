@@ -3,11 +3,8 @@
   height: 100vh;
   top: 0;
   left: 0;
-
-  z-index: 1111;
-
+  z-index: 1;
   position: fixed;
-
   visibility: hidden;
   opacity: 0;
 
@@ -24,28 +21,26 @@
 }
 
 .popup {
+  position: fixed;
+  left: 50%;
+  top: 49%;
+  z-index: 1;
   padding: 50px;
   max-width: 400px;
   width: 100%;
   border-radius: 20px;
-  left: 50%;
-  top: 49%;
   transform: translate(-50%, -50%);
-
-  z-index: 1111;
-
-  position: fixed;
-
   visibility: hidden;
   opacity: 0;
-  // filter: blur(2px);
-
+  background-color: white;
   transition: $transition;
 
-  background-color: white;
-
-  @media (max-width: 480px) {
-    width: 91%;
+  @media (max-width: 575px) {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: grid;
+    align-content: center;
   }
 
   @media (max-width: 411px) {
@@ -55,27 +50,21 @@
 
   &.active {
     top: 50%;
-
     visibility: visible;
     opacity: 1;
-    // filter: none;
-
     transition: $transition;
   }
 
   &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 50px;
     height: 50px;
-    right: 0;
-    top: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
-
-    position: absolute;
 
     @media (max-width: 440px) {
       width: 40px;
@@ -84,10 +73,9 @@
 
     &-bar {
       width: 30px;
-      height: 3px;
-      border-radius: 3px;
-
-      background-color: $primary;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #333;
 
       &:first-child {
         transform: translate(10px, 6px) rotate(45deg);
@@ -109,17 +97,9 @@
 
   &__title {
     margin-bottom: 20px;
-
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    text-align: center;
     line-height: 1.5;
-
-    @media (max-width: 411px) {
-      margin-bottom: 10px;
-
-      font-size: 16px;
-    }
   }
 
   &__label {

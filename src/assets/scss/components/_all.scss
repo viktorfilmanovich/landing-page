@@ -1,5 +1,6 @@
 @import "./components/header";
 @import "./components/hero";
+@import "./components/benefits";
 @import "./components/about";
 @import "./components/services";
 @import "./components/slider";
@@ -8,4 +9,6 @@
 @import "./components/footer";
 @import "./components/popup";
 @import "./components/thanks";
-@import "./components/legal-page";
+
+@import "./pages/partner-page";
+@import "./pages/legal-page";

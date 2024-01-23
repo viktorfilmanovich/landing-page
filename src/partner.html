@@ -1,0 +1,87 @@
+---
+layout: default
+title: Информация для монтажников от компании Кондик
+---
+
+<section class="partner">
+  <div class="container">
+    <h1 class="partner__title">Информация для монтажников</h1>
+    <p>Вы — специалист монтажной организации или работаете сами на себя?</p>
+    <p>
+      Заполните форму и получайте дополнительные заказы по кондиционированию.
+    </p>
+    <div class="partner__form">
+      <form method="POST" class="contact-form contact-form--popup">
+        <label for="popupName" class="popup__label"> Имя</label>
+        <input
+          id="popupName"
+          name="popupName"
+          type="text"
+          class="contact-form__input contact-form__input--name"
+        />
+        <div class="notification notification--name-popup">
+          <p>
+            Заполните
+            <b> имя</b>.
+          </p>
+          <div class="notification__alert-close">
+            <div class="notification__alert-close-bar"></div>
+            <div class="notification__alert-close-bar"></div>
+          </div>
+        </div>
+        <label for="popupPhone" class="popup__label"> Телефон </label>
+        <input
+          id="popupPhone"
+          name="popupPhone"
+          type="tel"
+          placeholder="+7 (123) 456 78 90"
+          class="contact-form__input contact-form__input--phone"
+        />
+        <div class="notification notification--phone-popup">
+          <p>
+            Заполните
+            <b> номер телефона</b>
+            полностью.
+          </p>
+          <div class="notification__alert-close">
+            <div class="notification__alert-close-bar"></div>
+            <div class="notification__alert-close-bar"></div>
+          </div>
+        </div>
+        <button type="submit" class="button-primary">Получить заказы</button>
+        <div class="contact-form__personal-group">
+          <div class="contact-form__item-check">
+            <input
+              name="popupCheckbox"
+              type="checkbox"
+              checked=""
+              aria-label="Сonsent to privacy policy"
+              class="contact-form__checkbox"
+            />
+          </div>
+          <div class="politics politics__text-center">
+            Я даю свое согласие с
+            <a href="policy.html" class="contact-form__privacy-policy"
+              >политикой конфиденциальности</a
+            >,
+            <a href="#" class="contact-form__user-agreement"
+              >пользовательским соглашением</a
+            >
+            и даю разрешение на обработку персональных данных.
+          </div>
+        </div>
+        <div class="notification notification--checkbox-popup">
+          <p>
+            Поле согласия с
+            <b> политикой конфиденциальности</b>
+            обязательное.
+          </p>
+          <div class="notification__alert-close">
+            <div class="notification__alert-close-bar"></div>
+            <div class="notification__alert-close-bar"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

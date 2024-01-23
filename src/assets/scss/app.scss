@@ -81,23 +81,16 @@ label {
 }
 
 .container {
+  max-width: 1280px;
   width: $container-width;
   margin: 0 auto;
   padding: 0 15px;
 
-  @media (min-width: 2048px) {
-    max-width: 1640px;
-  }
-
-  @media (max-width: 878px) {
+  @media (max-width: 991px) {
     width: 92%;
   }
 
-  @media (max-width: 480px) {
-    width: 98%;
-  }
-
-  @media (max-width: 374px) {
+  @media (max-width: 575px) {
     width: 100%;
   }
 }
@@ -105,29 +98,23 @@ label {
 .logo {
   cursor: pointer;
 
-  @media (max-width: 580px) {
-    justify-content: center;
-  }
-
-  @media (max-width: 460px) {
+  @media (max-width: 575px) {
     margin-right: 0;
-  }
-
-  @media (max-width: 279px) {
+    justify-content: center;
     grid-area: logo;
   }
 
   & p {
     &:first-child {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       color: #1961e4;
 
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         font-size: 18px;
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 575px) {
         font-size: 16px;
       }
     }
@@ -139,7 +126,7 @@ label {
         font-size: 10px;
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 575px) {
         font-size: 8px;
       }
     }
@@ -229,27 +216,19 @@ label {
 }
 
 .text-title {
-  margin: 0;
-  padding: 60px 0 40px;
-
   font-size: 28px;
   font-weight: 600;
   text-align: center;
 
-  @media (max-width: 878px) {
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 
-  @media (max-width: 650px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 575px) {
     font-size: 22px;
   }
 
-  @media (max-width: 279px) {
+  @media (max-width: 280px) {
     font-size: 20px;
   }
 }
@@ -260,10 +239,8 @@ label {
 
 .hidden {
   transform: translateX(-10%);
-
   opacity: 0;
-
-  transition: all 1.3s;
+  transition: opacity 1.3s ease, transform 1.3s ease;
 }
 
 .show {
@@ -290,7 +267,7 @@ label {
     font-size: 11px;
   }
 
-  @media (max-width: 274px) {
+  @media (max-width: 280px) {
     padding: 8px 30px 8px 8px;
     font-size: 10px;
   }
