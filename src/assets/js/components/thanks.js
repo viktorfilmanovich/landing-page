@@ -1,9 +1,7 @@
-const thanksPopup = document.querySelector(".thanks");
-
-thanksPopup.querySelector(".thanks__close").addEventListener("click", () => {
+const closing = () => {
   thanksPopup.classList.remove("active");
-});
+  background.classList.remove("active");
+};
 
-thanksPopup.querySelector(".button-primary").addEventListener("click", () => {
-  thanksPopup.classList.remove("active");
-});
+thanksPopup.querySelector(".thanks__close").addEventListener("click", closing);
+thanksPopup.querySelector(".button-primary").addEventListener("click", closing);

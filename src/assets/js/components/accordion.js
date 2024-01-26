@@ -1,6 +1,3 @@
-const accordionItems = document.querySelectorAll(".accordion__item");
-const titles = document.querySelectorAll(".accordion__title");
-
 titles.forEach((question) =>
   question.addEventListener("click", toggleAccordion)
 );

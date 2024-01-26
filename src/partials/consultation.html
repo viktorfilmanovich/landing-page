@@ -5,69 +5,63 @@
       <p class="consultation__description">
         Оставьте свой номер телефона, и мы свяжемся с вами для консультации
       </p>
-      <form class="contact-form contact-form--consultation">
-        <div class="consultation__item-left">
-          <p class="contact-form__message2"></p>
-          <div class="input-data">
-            <input
-              name="consultPhone"
-              type="tel"
-              class="contact-form__input contact-form__input--phone"
-              placeholder="+7 (123) 456 78 90"
-            />
+      <form class="contact-form">
+        <input
+          name="phone"
+          type="tel"
+          class="contact-form__input contact-form__input--phone"
+          placeholder="+7 (123) 456 78 90"
+        />
+        <div
+          class="contact-form__notification contact-form__notification--phone-popup"
+        >
+          <p>
+            Заполните
+            <b> номер телефона</b>
+            полностью.
+          </p>
+          <div class="contact-form__notification-close">
+            <div class="contact-form__notification-close-bar"></div>
+            <div class="contact-form__notification-close-bar"></div>
           </div>
-          <div class="notification notification--phone-consultation">
-            <p>
-              Заполните
-              <b> номер телефона</b>
-              полностью.
-            </p>
-            <div class="notification__alert-close">
-              <div class="notification__alert-close-bar"></div>
-              <div class="notification__alert-close-bar"></div>
-            </div>
-          </div>
-          <button type="submit" class="button-primary">Отправить</button>
         </div>
-        <div class="consultation__item-right">
-          <img
-            width="160"
-            height="140"
-            src="assets/images/consultation-illustration.svg"
-            alt="связаться с компанией Кондик"
-            loading="lazy"
+        <button value="Не нашли нужную сплит-систему" class="button-primary">
+          <span>Отправить</span>
+          <div class="loader"></div>
+        </button>
+        <img
+          width="160"
+          height="140"
+          src="assets/images/consultation-illustration.svg"
+          alt="связаться с компанией Кондик"
+          loading="lazy"
+        />
+        <div class="contact-form__footer">
+          <input
+            name="checkbox"
+            type="checkbox"
+            checked
+            aria-label="Сonsent to privacy policy"
+            class="contact-form__checkbox"
           />
-        </div>
-        <div class="contact-form__personal-group">
-          <div class="contact-form__item-check">
-            <input
-              name="consultCheckbox"
-              type="checkbox"
-              checked
-              aria-label="Сonsent to privacy policy"
-              class="contact-form__checkbox"
-            />
-          </div>
-          <div class="politics politics__text-center">
+          <div class="contact-form__politics">
             Я даю свое согласие с
-            <a href="policy.html" class="contact-form__privacy-policy"
-              >политикой конфиденциальности</a
-            >,
-            <a href="#" class="contact-form__user-agreement"
-              >пользовательским соглашением</a
-            >
+            <a href="policy.html">политикой конфиденциальности</a>,
+            <a href="#">пользовательским соглашением</a>
             и даю разрешение на обработку персональных данных.
           </div>
         </div>
-        <div class="notification notification--checkbox-consultation">
+        <div
+          class="contact-form__notification contact-form__notification--checkbox-popup"
+        >
           <p>
             Поле согласия с
             <b> политикой конфиденциальности</b>
             обязательное.
           </p>
-          <div class="notification__alert-close">
-            <div class="notification__alert-close-bar"></div>
-            <div class="notification__alert-close-bar"></div>
+          <div class="contact-form__notification-close">
+            <div class="contact-form__notification-close-bar"></div>
+            <div class="contact-form__notification-close-bar"></div>
           </div>
         </div>
       </form>

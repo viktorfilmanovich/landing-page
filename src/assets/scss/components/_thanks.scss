@@ -1,18 +1,17 @@
 .thanks {
-  padding: 50px;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 20px;
+  position: fixed;
+  z-index: 2;
   left: 50%;
   top: 49%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 50px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 14%);
-  position: fixed;
   visibility: hidden;
   opacity: 0;
-  filter: blur(2px);
-  transition: $transition;
+  transition: top 0.25s ease, visibility 0.25s ease, opacity 0.25s ease;
   background-color: #fff;
 
   @media (max-width: 575px) {
@@ -21,12 +20,8 @@
 
   &.active {
     top: 50%;
-
     visibility: visible;
     opacity: 1;
-    filter: none;
-
-    transition: $transition;
   }
 
   &__close {

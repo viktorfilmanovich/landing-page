@@ -1,5 +1,10 @@
+//= components/store.js
+//= components/constants.js
+//= components/burger.js
 //= components/maskPhone.js
 //= components/popup.js
-//= components/popupFormValidation.js
-//= components/burger.js
+//= components/forms.js
+//= components/scrollAnimation.js
+//= components/lazyLoadingSlider.js
+//= components/accordion.js
 //= components/thanks.js

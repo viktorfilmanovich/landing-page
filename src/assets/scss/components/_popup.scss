@@ -3,20 +3,16 @@
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   visibility: hidden;
   opacity: 0;
-
-  transition: $transition;
-
+  transition: visibility 0.25s ease, opacity 0.25s ease;
   background-color: #00000038;
 
   &.active {
     visibility: visible;
     opacity: 1;
-
-    transition: $transition;
   }
 }
 
@@ -24,7 +20,7 @@
   position: fixed;
   left: 50%;
   top: 49%;
-  z-index: 1;
+  z-index: 2;
   padding: 50px;
   max-width: 400px;
   width: 100%;
@@ -33,7 +29,7 @@
   visibility: hidden;
   opacity: 0;
   background-color: white;
-  transition: $transition;
+  transition: top 0.25s ease, visibility 0.25s ease, opacity 0.25s ease;
 
   @media (max-width: 575px) {
     max-width: 100%;
@@ -52,7 +48,6 @@
     top: 50%;
     visibility: visible;
     opacity: 1;
-    transition: $transition;
   }
 
   &__close-button {
@@ -73,8 +68,8 @@
 
     &-bar {
       width: 30px;
-      height: 2px;
-      border-radius: 2px;
+      height: 1px;
+      border-radius: 1px;
       background-color: #333;
 
       &:first-child {
@@ -102,16 +97,7 @@
     line-height: 1.5;
   }
 
-  &__label {
-    margin-bottom: 6px;
-  }
-
-  & .contact-form__input {
-    margin-bottom: 10px;
-  }
-
-  & .button-primary {
-    margin-top: 10px;
-    width: 100%;
-  }
+  // & .contact-form__input {
+  //   margin-bottom: 10px;
+  // }
 }

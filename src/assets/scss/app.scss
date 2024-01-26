@@ -245,92 +245,61 @@ label {
 
 .show {
   transform: translateX(0);
-
   opacity: 1;
 }
 
-.notification {
-  min-height: 48px;
-  padding: 10px 32px 10px 18px;
-  border-radius: 6px;
-  border: 1px solid #fc8181;
-
-  position: relative;
-
+.loader {
+  margin: 0 auto;
+  font-size: 16px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  color: white;
+  animation: spin 1.7s infinite ease, round 1.7s infinite ease;
   display: none;
 
-  color: #b53d37;
-
-  @media (max-width: 411px) {
-    padding-right: 40px;
-
-    font-size: 11px;
+  &--active {
+    display: block;
   }
 
-  @media (max-width: 280px) {
-    padding: 8px 30px 8px 8px;
-    font-size: 10px;
+  @keyframes spin {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+        0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+        0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
+        -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+        -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+        -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+        -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+        -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+        -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+        0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
   }
 
-  &.active {
-    display: flex;
-    align-items: center;
-  }
-
-  &--phone-consultation {
-    margin-bottom: 10px;
-
-    grid-area: phoneNotification;
-  }
-
-  &--checkbox-consultation {
-    margin-top: 10px;
-
-    grid-area: checkboxNotification;
-  }
-
-  &--name-popup {
-    margin-bottom: 10px;
-  }
-
-  &--phone-popup {
-    margin-bottom: 10px;
-  }
-
-  &--checkbox-popup {
-    margin-top: 10px;
-  }
-
-  &__alert {
-    &-close {
-      width: 30px;
-      height: 30px;
-      right: -5px;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-
-      position: absolute;
-
-      &-bar {
-        width: 30px;
-        height: 2px;
-        border-radius: 3px;
-        background-color: #f56565;
-
-        &:first-child {
-          transform: translate(8px, 0px) rotate(45deg);
-        }
-
-        &:last-child {
-          transform: translate(-7px, 0px) rotate(135deg);
-        }
-      }
+  @keyframes round {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }

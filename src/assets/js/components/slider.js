@@ -198,7 +198,9 @@ function renderProducts(blockWidth) {
               <p class="card-item__price">${product.price.toLocaleString(
                 "ru-RU"
               )} ₽</p>
-              <button class="button-primary open-popup">Установить</button>
+              <button value="${
+                product.name
+              }"  class="button-primary open-popup">Установить</button>
         </div>
       </div>
         `
@@ -208,9 +210,11 @@ function renderProducts(blockWidth) {
   const openPopupButtons = document.querySelectorAll(".open-popup");
 
   openPopupButtons.forEach((button) =>
-    button.addEventListener("click", () => {
-      popupBackground.classList.add("active");
+    button.addEventListener("click", (event) => {
+      background.classList.add("active");
       popup.classList.add("active");
+
+      formThemeState = event.target.value;
     })
   );
 }

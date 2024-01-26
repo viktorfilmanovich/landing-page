@@ -1,30 +1,40 @@
-const closePopupButton = document.querySelector(".popup__close-button");
-const popupBackground = document.querySelector(".popup-background");
-const popup = document.querySelector(".popup");
-
-const openPopupButtons = document.querySelectorAll(".open-popup");
-
 openPopupButtons.forEach((button) =>
-  button.addEventListener("click", () => {
-    popupBackground.classList.add("active");
+  button.addEventListener("click", (event) => {
+    background.classList.add("active");
     popup.classList.add("active");
+
+    formThemeState = event.target.value;
   })
 );
 
 const closingModal = () => {
-  popupBackground.classList.remove("active");
+  const form = popup.querySelector("form");
+
+  const nameNotification = form.querySelector(
+    ".contact-form__notification--name-popup"
+  );
+  const phoneNotification = form.querySelector(
+    ".contact-form__notification--phone-popup"
+  );
+  const checkboxNotification = form.querySelector(
+    ".contact-form__notification--checkbox-popup"
+  );
+
+  background.classList.remove("active");
   popup.classList.remove("active");
+  if (thanksPopup.classList.contains("active"))
+    thanksPopup.classList.remove("active");
 
   setTimeout(() => {
-    inputNamePopup.value = "";
-    inputPhonePopup.value = "";
-    inputCheckboxPopup.checked = true;
+    form.reset();
 
-    nameNotificationPopup.classList.remove("active");
-    phoneNotificationPopup.classList.remove("active");
-    checkboxNotificationPopup.classList.remove("active");
-  }, 250);
+    formThemeState = "";
+
+    nameNotification.classList.remove("contact-form__notification--active");
+    phoneNotification.classList.remove("contact-form__notification--active");
+    checkboxNotification.classList.remove("contact-form__notification--active");
+  }, 500);
 };
 
 closePopupButton.addEventListener("click", closingModal);
-popupBackground.addEventListener("click", closingModal);
+background.addEventListener("click", closingModal);
